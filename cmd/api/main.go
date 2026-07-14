@@ -22,6 +22,7 @@ import (
 
 func main() {
 	configPath := flag.String("config", "config.yaml", "YAML configuration file")
+	force := flag.Bool("force", false, "collect codes immediately on startup")
 	flag.Parse()
 
 	cfg, err := config.Load(*configPath)
@@ -80,12 +81,6 @@ func main() {
 		logger.Info("collection finished", "codes", len(result.Codes), "issues", len(result.Errors))
 	}
 
-	go (scheduler.Scheduler{
-		Location: cfg.Scheduler.Location,
-		Run:      runCollection,
-		Logger:   logger,
-	}).Start(rootCtx)
-
 	server := &http.Server{
 		Addr:              cfg.HTTP.Listen,
 		Handler:           api.Handler{Store: store},
@@ -99,6 +94,17 @@ func main() {
 	go func() {
 		logger.Info("API server listening", "address", cfg.HTTP.Listen)
 		serverErrors <- server.ListenAndServe()
+	}()
+
+	go func() {
+		if *force {
+			runCollection(rootCtx)
+		}
+		(scheduler.Scheduler{
+			Location: cfg.Scheduler.Location,
+			Run:      runCollection,
+			Logger:   logger,
+		}).Start(rootCtx)
 	}()
 
 	select {
