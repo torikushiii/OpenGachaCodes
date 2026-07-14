@@ -27,6 +27,14 @@ Returns all supported games.
   {
     "slug": "endfield",
     "name": "Arknights: Endfield"
+  },
+  {
+    "slug": "wuwa",
+    "name": "Wuthering Waves"
+  },
+  {
+    "slug": "nte",
+    "name": "Neverness to Everness"
   }
 ]
 ```

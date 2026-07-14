@@ -9,7 +9,9 @@ import (
 	"opengachacodes/internal/scraper"
 	"opengachacodes/internal/scraper/endfield"
 	"opengachacodes/internal/scraper/genshin"
+	"opengachacodes/internal/scraper/nte"
 	starrail "opengachacodes/internal/scraper/starrail"
+	"opengachacodes/internal/scraper/wuwa"
 	"opengachacodes/internal/scraper/zenless"
 )
 
@@ -28,6 +30,8 @@ func New() Catalog {
 		{Game: domain.Game{Slug: "starrail", Name: "Honkai: Star Rail"}, Factory: starrail.Sources},
 		{Game: domain.Game{Slug: "zenless", Name: "Zenless Zone Zero"}, Factory: zenless.Sources},
 		{Game: domain.Game{Slug: "endfield", Name: "Arknights: Endfield"}, Factory: endfield.Sources},
+		{Game: domain.Game{Slug: "wuwa", Name: "Wuthering Waves"}, Factory: wuwa.Sources},
+		{Game: domain.Game{Slug: "nte", Name: "Neverness to Everness"}, Factory: nte.Sources},
 	}}
 }
 
