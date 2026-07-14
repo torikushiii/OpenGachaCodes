@@ -265,9 +265,9 @@ func mergeSources(existing, incoming []domain.SourceAttribution) []domain.Source
 			}
 			if source.Status == "" || source.Status == domain.StatusUnknown {
 				source.Status = current.Status
-			}
-			if source.ExpiresAt == nil {
-				source.ExpiresAt = current.ExpiresAt
+				if source.ExpiresAt == nil {
+					source.ExpiresAt = current.ExpiresAt
+				}
 			}
 			if current.LastSeen.After(source.LastSeen) {
 				source.LastSeen = current.LastSeen

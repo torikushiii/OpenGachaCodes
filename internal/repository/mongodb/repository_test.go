@@ -60,3 +60,19 @@ func TestMergeCodeUsesLatestOfficialObservation(t *testing.T) {
 		t.Fatalf("status=%q, want expired", got)
 	}
 }
+
+func TestMergeCodeClearsExpirationOnNewActiveObservation(t *testing.T) {
+	first := time.Date(2026, 7, 12, 10, 0, 0, 0, time.UTC)
+	expiresAt := first.Add(time.Hour)
+	existing := domain.Code{Sources: []domain.SourceAttribution{{
+		SourceID: "nte-game8", Authority: domain.AuthorityCommunity,
+		Status: domain.StatusActive, ExpiresAt: &expiresAt, FirstSeen: first, LastSeen: first,
+	}}}
+	incoming := domain.Code{Sources: []domain.SourceAttribution{{
+		SourceID: "nte-game8", Authority: domain.AuthorityCommunity,
+		Status: domain.StatusActive, FirstSeen: first.Add(time.Hour), LastSeen: first.Add(time.Hour),
+	}}}
+	if got := mergeCode(existing, incoming).ExpiresAt; got != nil {
+		t.Fatalf("expiresAt=%v, want nil", got)
+	}
+}
