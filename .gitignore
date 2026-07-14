@@ -1,0 +1,11 @@
+# Local configuration
+config.yaml
+
+# Build outputs
+/api
+/codes
+*.out
+
+# Environment files
+.env
+.env.*

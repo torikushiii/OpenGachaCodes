@@ -1,0 +1,31 @@
+{
+  "retcode": 0,
+  "message": "OK",
+  "data": {
+    "modules": [
+      {
+        "exchange_group": {
+          "bonuses": [
+            {
+              "exchange_code": "OFFICIAL123",
+              "code_status": "ON",
+              "icon_bonuses": [
+                {"bonus_num": 60, "icon_url": "https://example.com/150a941de99e21fc96dce97cde2dae22_1631694835879620915.png"},
+                {"bonus_num": 5, "icon_url": "https://example.com/46de1e881b5dff638969aed85850e388_7373589751062039567.png"},
+                {"bonus_num": 10000, "icon_url": "https://example.com/503abf5f2f2c8b2013dde0f2197fc9ac_3214074117670348863.png"},
+                {"bonus_num": 10, "icon_url": "https://example.com/d3eb1267f27bead29907cb279d4365ab_4473305467748929436.png"},
+                {"bonus_num": 1, "icon_url": "https://example.com/new_reward_hash.png"},
+                {"bonus_num": 1, "icon_url": "https://example.com/new_reward_hash.png"}
+              ]
+            },
+            {"exchange_code": "INACTIVE123", "code_status": "OFF", "icon_bonuses": []},
+            {"exchange_code": "", "code_status": "ON", "icon_bonuses": []},
+            {"exchange_code": "YuanShen", "code_status": "ON", "server": "China", "icon_bonuses": []},
+            {"exchange_code": "CHINA123", "code_status": "ON", "region": "CN", "icon_bonuses": []}
+          ]
+        }
+      },
+      {"exchange_group": null}
+    ]
+  }
+}

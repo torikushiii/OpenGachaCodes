@@ -1,0 +1,6 @@
+{
+  "parse": {
+    "text": "<table><tr><th>Code</th><th>Server</th><th>Rewards</th><th>Duration</th></tr><tr><td><code>GENSHINGIFT</code></td><td>America, Europe, Asia, TW/HK/Macao</td><td><span class=\"item\">Primogem ×50</span><span class=\"item\">Hero's Wit ×3</span></td><td>Indefinite</td></tr><tr><td>SUMMER2026</td><td>America, Europe, Asia, TW/HK/Macao</td><td>Mora ×10,000</td><td>Expired</td></tr><tr><td>YuanShen</td><td>China</td><td>Primogem ×50</td><td>Indefinite</td></tr><tr><td>Not a code with spaces</td><td>America</td><td>Nothing</td><td>Unknown</td></tr></table>",
+    "revid": 12345
+  }
+}

@@ -1,0 +1,10 @@
+database:
+  uri: mongodb://localhost:27017
+  name: opengachacodes
+
+http:
+  timeout: 15s
+  listen: 127.0.0.1:8080
+
+scheduler:
+  location: Local
